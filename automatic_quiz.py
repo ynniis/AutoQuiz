@@ -3,12 +3,14 @@
 # NKRIDev
 # 11/04/2025
 
+# Librarys
 import streamlit as st
 from youtube_transcript_api import YouTubeTranscriptApi
 import os
 from openai import OpenAI
 import json
 
+# Creation of the JSON quiz via ChatGPT
 def createQuizz(video_id):
     ytt_api = YouTubeTranscriptApi()
     fetched_transcript = ytt_api.fetch(video_id, languages=['en'])	
@@ -17,10 +19,6 @@ def createQuizz(video_id):
 
     for snippet in fetched_transcript:
         scriptArray.append(snippet.text)
-        #print(snippet.text)
-
-    #last_snippet = fetched_transcript[-1]
-    #snippet_count = len(fetched_transcript)
 
     # Create an OpenAI object with API key (do not share it)
     private_key = st.secrets["PRIVATE_KEY"]
@@ -49,6 +47,7 @@ def createQuizz(video_id):
     jsonQuizz = completion.choices[0].message.content
     return jsonQuizz
 
+# Retrieve the video ID of a YouTube URL
 def extraire_id(tag_video):
     if "youtu.be/" in tag_video:
         video_id = tag_video.split("youtu.be/")[1].split("?")[0]
@@ -58,11 +57,13 @@ def extraire_id(tag_video):
         raise ValueError("Invalid YouTube video tag format")
     return video_id
 
+# Displaying the quiz on the page
 def quiz_display(quiz_object):
     title = quiz_object['quiz']['title']
     description = quiz_object['quiz']['description']
     questions = quiz_object['quiz']['questions']
-
+    
+   # We removed the video because there was an error between streamlit and Youtube (access problem)
    # st.video(st.session_state.get('url_video', ''))
 
     st.subheader(title)
@@ -81,9 +82,8 @@ def quiz_display(quiz_object):
             index=index,
             key=key
         )
-        
-    #st.json(quiz_object)
 
+# Logic
 st.title("Automatic Quiz Generator")
 url_video = st.text_input("Enter the youtube video tag (ex: :rainbow[youtu.be/xvFZjo5PgG0?si=eI9Z1KIbARmMMbiJ])")
 is_clicked = st.button("Choose this video tag !")
@@ -97,7 +97,7 @@ if is_clicked:
         st.balloons()
     else:
         st.error("Please enter a valid youtube video tag.")
-        
+
 if 'quiz_object' in st.session_state:
     quizz_model = st.session_state['quiz_object']
     quiz_display(quizz_model)
