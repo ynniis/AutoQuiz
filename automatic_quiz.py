@@ -63,7 +63,7 @@ def quiz_display(quiz_object):
     description = quiz_object['quiz']['description']
     questions = quiz_object['quiz']['questions']
 
-    st.video(st.session_state.get('url_video', ''))
+   # st.video(st.session_state.get('url_video', ''))
 
     st.subheader(title)
     st.text(description)
