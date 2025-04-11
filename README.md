@@ -1,63 +1,68 @@
 # 🎥 YouTube Auto Quiz Generator
 
-Générez automatiquement des quiz à partir de vidéos YouTube avec sous-titres en anglais !  
-Ce site permet aux enseignants de créer des quiz interactifs à partir de vidéos, de les partager aux élèves, et de consulter leurs résultats.
+Automatically generate quizzes from YouTube videos with English subtitles!
 
-🔗 **Accéder à l'application : [https://auto-quiz.streamlit.app/](https://auto-quiz.streamlit.app/)**
+This site allows teachers to create interactive quizzes from videos, share them with students, and view their results.
 
----
-
-## 📚 Scénario
-1. L'enseignant trouve une vidéo YouTube intéressante (avec sous-titres anglais).
-2. Il colle le lien de la vidéo dans l'application.
-3. Il appuie sur le bouton généré.
-4. Un quiz est automatiquement généré à partir de la transcription.
-5. Il partage le lien du quiz aux élèves.
-6. Chaque élève répond au quiz et obtient son score.
+🔗 **Access the app: [https://auto-quiz.streamlit.app/](https://auto-quiz.streamlit.app/)**
 
 ---
 
-## 🚀 Fonctionnalités
-
-- 🎯 Génération automatique de quiz à choix multiples via une vidéo
-- 🎈 Score affiché avec animation
+## 📚 Scenario
+1. The teacher finds an interesting YouTube video (with English subtitles).
+2. They paste the video link into the app.
+3. They click the generate button.
+4. A quiz is automatically generated from the transcript.
+5. They share the quiz link with the students.
+6. Each student takes the quiz and receives their score.
 
 ---
 
-## 🛠️ Technologies utilisées
+## 🚀 Features
 
-- [Streamlit](https://streamlit.io/) — Framework Python pour apps web
+- 🎯 Automatic generation of multiple-choice quizzes via video
+- 🎈 Score displayed with animation
+
+---
+
+## 🛠️ Technologies used
+
+- [Streamlit](https://streamlit.io/) — Python framework for web apps
 - [YouTube Transcript API](https://pypi.org/project/youtube-transcript-api/)
 - [OpenAI API](https://platform.openai.com/)
 - Python & JSON
 
 ---
 
-## ▶️ Lancer en local
+## ▶️ Run locally
 
-1. **Cloner le projet**
+1. **Clone the project**
 
-   ```bash
-   git clone https://github.com/your-username/youtube-quiz-generator.git
-   cd youtube-quiz-generator
+    ```bash
+    git clone https://github.com/your-username/youtube-quiz-generator.git
+    cd youtube-quiz-generator
 
-2. **Installer les dépendances**
+2. **Install dependencies**
 
-   ```bash
-   pip install streamlit youtube-transcript-api openai
+    ```bash
+    pip install streamlit youtube-transcript-api openai
 
-3. Configurer la clé API OpenAI
-   ```bash
-   PRIVATE_KEY = "votre_clé_api_openai"
+3. **Configure the OpenAI API key**
 
-4. Lancer l'application
+    ```bash
+    PRIVATE_KEY = "your_openai_api_key"
+
+4. **Launch the application**
+
    ```bash
    streamlit run app.py
 
 ---
 
-## ✍️ Auteurs & Crédits
+## ✍️ Authors & Credits
 
-🛠️ Projet réalisé dans le cadre du **BTS CIEL - 1ère année**  
-👥 Développé par : **Ynniis** & **NKRIDev**  
-📅 Date : *11 avril 2025*
+🛠️ Project carried out as part of the **BTS CIEL - 1st year**
+
+👥 Developed by: **Ynniis** & **NKRIDev**
+
+📅 Date: *April 11, 2025*
