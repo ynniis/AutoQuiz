@@ -2,4 +2,3 @@ streamlit
 youtube-transcript-api
 openai
 youtube_transcript_api
-json
