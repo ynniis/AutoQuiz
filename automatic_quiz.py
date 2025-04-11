@@ -1,3 +1,8 @@
+# Authors:
+# Ynniis
+# NKRIDev
+# 11/04/2025
+
 import streamlit as st
 from youtube_transcript_api import YouTubeTranscriptApi
 import os
