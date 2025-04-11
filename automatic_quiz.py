@@ -117,3 +117,11 @@ if 'quiz_object' in st.session_state:
 
         if score == total:
             st.balloons()
+
+# Footer
+st.markdown("""
+---
+<p style='text-align: center; font-size: 0.9em; color: gray;'>
+Made with ❤️ by <strong>Ynniis</strong> & <strong>NKRIDev</strong>
+</p>
+""", unsafe_allow_html=True)
